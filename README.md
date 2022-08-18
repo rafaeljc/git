@@ -45,12 +45,20 @@ exibir as linhas de desenvolvimento (*branchs*)
 ```console
 git log --graph
 ```
+exibir os n últimos
+```console
+git log -n <número>
+```
 ### Trabalhar com repositórios remotos
 ```console
 git remote add <nome-do-repositorio> caminho/para/o/repositorio
 ```
+listar os repositórios remotos
 ```console
-git remote rename antigo novo
+git remote -v
+```
+```console
+git remote rename <antigo> <novo>
 ```
 ### Baixar um repositório
 ```console
@@ -93,7 +101,7 @@ reverter alterações que **ainda não foram adicionadas ao *stage***
 ```console
 git checkout -- <arquivo.ext>
 ```
-reverter alterações que **já estão no *stage***
+remover alterações do ***stage***
 ```console
 git reset HEAD <arquivo.ext>
 ```
@@ -121,4 +129,20 @@ git stash drop <índice>
 recuperar a **última** alteração salva na *stash* e removê-la da lista
 ```console
 git stash pop
+```
+### Exibir mudanças efetuadas
+mudanças que ainda não estão no *stage*
+```console
+git diff
+```
+mudanças realizadas entre dois *commits*
+```console
+git diff <hash-commit-inicial>..<hash-commit-final>
+```
+### Criar uma tag/release
+```console
+git tag -a <versão> -m "Mensagem descritiva"
+```
+```console
+git push [repositório] <versão>
 ```
