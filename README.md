@@ -20,7 +20,7 @@ git status
 ```
 ### Adicionar arquivos para serem *commitados*
 ```console
-git add <file.ext>
+git add <arquivo.ext>
 ```
 adicionar todos os arquivos
 ```console
@@ -87,4 +87,38 @@ git merge <nome-do-branch>
 ### Juntar um *branch* **ao atual** (**sem** gerar um *commit* de *merge*)
 ```console
 git rebase <nome-do-branch>
+```
+### Desfazer alterações
+reverter alterações que **ainda não foram adicionadas ao *stage***
+```console
+git checkout -- <arquivo.ext>
+```
+reverter alterações que **já estão no *stage***
+```console
+git reset HEAD <arquivo.ext>
+```
+reverter alterações que **já foram *commitadas***
+```console
+git revert <hash>
+```
+### Salvar alterações (sem *commitar*) para serem trabalhadas depois
+```console
+git stash
+```
+### Retornar ao trabalho de onde parou
+listar as alterações que estão salvas na *stash*
+```console
+git stash list
+```
+aplicar uma alteração em específico que está salva na *stash*
+```console
+git stash apply <índice>
+```
+remover da *stash* determinada alteração
+```console
+git stash drop <índice>
+```
+recuperar a **última** alteração salva na *stash* e removê-la da lista
+```console
+git stash pop
 ```
