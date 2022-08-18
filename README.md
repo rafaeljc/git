@@ -64,7 +64,7 @@ git push [<nome-do-repositorio>] [branch]
 ```console
 git pull [<nome-do-repositorio>] [branch]
 ```
-### Exibir os *branches* do repositório
+### Exibir os *branchs* do repositório
 ```console
 git branch
 ```
